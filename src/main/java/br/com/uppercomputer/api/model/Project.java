@@ -25,11 +25,11 @@ public class Project {
 	private String name;
 	
 	@NotNull
-	@Column(name = "Register")
+	@Column(name = "NumberRegister")
 	private String register;
 	
-	@Column(name = "NumeroRecurso")
-	private String numeroRecurso;
+	@Column(name = "Tecnologias")
+	private String tecnologias;
 
 	public Integer getId() {
 		return id;
@@ -55,12 +55,12 @@ public class Project {
 		this.register = register;
 	}
 
-	public String getNumeroRecurso() {
-		return numeroRecurso;
+	public String getTecnologias() {
+		return tecnologias;
 	}
 
-	public void setNumeroRecurso(String numeroRecurso) {
-		this.numeroRecurso = numeroRecurso;
+	public void setTecnologias(String tecnologias) {
+		this.tecnologias = tecnologias;
 	}
 
 	@Override
