@@ -11,4 +11,32 @@ public class Utils {
 		BigInteger hash = new BigInteger(1, messagedig.digest(senha.getBytes()));
 		return hash.toString(16);
 	}
+	
+	public static String generatePassword() {
+		StringBuilder senha = new StringBuilder();
+		String[] caracteres = { "0", "1", "2", "3", "4", "5", "6", "7", "8",
+                "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+                "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+                "x", "y","z","+","-","/","*","_","!","@","$","%","&"};
+
+	    for (int i = 0; i < 8; i++) {
+	        int posicao = (int) (Math.random() * caracteres.length);
+	        senha.append(caracteres[posicao]);
+	    }
+	    return senha.toString();
+	}
+	
+	public static String generateCode() {
+		StringBuilder senha = new StringBuilder();
+		String[] caracteres = { "0", "1", "2", "3", "4", "5", "6", "7", "8",
+                "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+                "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+                "x", "y","z","+","-","/","*","_","!","@","$","%","&"};
+
+	    for (int i = 0; i < 8; i++) {
+	        int posicao = (int) (Math.random() * caracteres.length);
+	        senha.append(caracteres[posicao]);
+	    }
+	    return senha.toString();
+	}
 }

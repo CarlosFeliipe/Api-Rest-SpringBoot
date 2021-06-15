@@ -20,7 +20,7 @@ public class ProjectService {
 	
 	public ResponseEntity<Project> createProject(Project project) {
 		
-		Project resultExists = repository.findByCode(project.getCode());
+		Project resultExists = repository.findByRegister(project.getRegister());
 		
 		if(resultExists == null) {
 			
@@ -65,7 +65,7 @@ public class ProjectService {
 		if(repository.findById(id).isPresent()) {
 			repository.deleteById(id);
 		} else {
-			throw new NegocioException("Funcionario não encontrado.");
+			throw new NegocioException("Projeto não encontrado.");
 		}
 	}
 	

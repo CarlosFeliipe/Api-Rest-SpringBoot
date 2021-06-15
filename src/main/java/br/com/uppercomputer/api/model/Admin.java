@@ -7,13 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="TB_PROJECT")
-public class Project {
+@Table(name = "TB_ADMIN")
+public class Admin {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +23,24 @@ public class Project {
 	private String name;
 	
 	@NotNull
-	@Column(name = "Register")
-	private String register;
+	@Column(name = "Email")
+	private String email;
 	
-	@Column(name = "NumeroRecurso")
-	private String numeroRecurso;
+	@NotNull
+	@Column(name = "Password")
+	private String password;
+	
+	@NotNull
+	@Column(name = "Status")
+	private String status;
+	
+	@NotNull
+	@Column(name = "Reset_Password")
+	private String resetarSenha;
+
+	@NotNull
+	@Column(name = "Code")
+	private String code;
 
 	public Integer getId() {
 		return id;
@@ -47,20 +58,44 @@ public class Project {
 		this.name = name;
 	}
 
-	public String getRegister() {
-		return register;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setRegister(String register) {
-		this.register = register;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getNumeroRecurso() {
-		return numeroRecurso;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setNumeroRecurso(String numeroRecurso) {
-		this.numeroRecurso = numeroRecurso;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getResetarSenha() {
+		return resetarSenha;
+	}
+
+	public void setResetarSenha(String resetarSenha) {
+		this.resetarSenha = resetarSenha;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override
@@ -79,7 +114,7 @@ public class Project {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Project other = (Project) obj;
+		Admin other = (Admin) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -87,4 +122,5 @@ public class Project {
 			return false;
 		return true;
 	}
+	
 }

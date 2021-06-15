@@ -7,5 +7,5 @@ import br.com.uppercomputer.api.model.Project;
 
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Integer>{
-	public Project findByCode(String code);
+	public Project findByRegister(String register);
 }
